@@ -1,6 +1,9 @@
 import * as React from "react"
 import EventsList from './events.js'
 import {graphql} from "gatsby";
+import Footer from "../components/footer";
+import Hero from "../components/hero";
+import Header from "../components/header";
 
 const pageStyles = {
     color: "#232129",
@@ -12,7 +15,10 @@ const IndexPage = ({data}) => {
     console.log(data.allEventsJson)
     return (
         <main style={pageStyles}>
+            <Header />
+            <Hero />
             <EventsList eventsData={data.allEventsJson} />
+            <Footer />
         </main>
     )
 }
