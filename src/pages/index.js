@@ -12,7 +12,6 @@ const pageStyles = {
 }
 
 const IndexPage = ({data}) => {
-    console.log(data.allEventsJson)
     return (
         <main style={pageStyles}>
             <Header />
