@@ -1,5 +1,8 @@
 import * as React from "react"
 import { StaticImage } from 'gatsby-plugin-image'
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 
 const pageStyles = {
   color: "#232129",
@@ -124,9 +127,24 @@ const links = [
   },
 ]
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <main style={pageStyles}>
+        <div>
+    <h1>My Events</h1>
+    {data.allEventsJson.edges.map(({ node }, index) => (
+      <div key={index}>
+        <h2>{node.title}</h2>
+        <p>{node.formatted_start_date}</p>
+  {node.downloadedImages && (
+    <GatsbyImage image={getImage(node.downloadedImages)} alt={node.title} />
+  )}
+
+        <p>{node.url}</p>
+      </div>
+    ))}
+  </div>
+
       <h1 style={headingStyles}>
         Congratulations
         <br />
@@ -180,3 +198,22 @@ const IndexPage = () => {
 export default IndexPage
 
 export const Head = () => <title>Home Page</title>
+
+export const query = graphql`
+  query {
+    allEventsJson {
+      edges {
+        node {
+          title
+          formatted_start_date
+                  downloadedImages {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+          url
+        }
+      }
+    }
+  }
+`
