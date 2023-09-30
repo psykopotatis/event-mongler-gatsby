@@ -4,6 +4,8 @@ import {graphql} from "gatsby";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Header from "../components/header";
+// Import from an installed package
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const pageStyles = {
     color: "#232129",
@@ -13,12 +15,12 @@ const pageStyles = {
 
 const IndexPage = ({data}) => {
     return (
-        <main style={pageStyles}>
+        <div>
             <Header />
             <Hero />
             <EventsList eventsData={data.allEventsJson} />
             <Footer />
-        </main>
+        </div>
     )
 }
 
