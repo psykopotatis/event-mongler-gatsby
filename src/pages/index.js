@@ -5,7 +5,9 @@ import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Header from "../components/header";
 // Import from an installed package
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./main.css";
+
 
 const pageStyles = {
     color: "#232129",
