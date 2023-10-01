@@ -9,12 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 
 
-const pageStyles = {
-    color: "#232129",
-    padding: 96,
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-
 const IndexPage = ({data}) => {
     return (
         <div>
