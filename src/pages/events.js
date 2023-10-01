@@ -8,12 +8,12 @@ const EventsList = ({eventsData}) => {
             <div className="container">
                 <div className="row text-center">
                     <div className="col">
-                        <h2>.. kommande evenemang i Stockholm</h2>
+                        <h2>Kommande evenemang i Stockholm</h2>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-1">
-                        asdf
+                        &nbsp;
                     </div>
 
                     <div className="col-md-9">
