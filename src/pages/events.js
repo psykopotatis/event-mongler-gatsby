@@ -23,7 +23,7 @@ const EventsList = ({eventsData}) => {
                                     <div key={index}>
                                         <div>{node.formatted_start_date}</div>
                                         <div className="event-url">
-                                            <b><a href="{node.url}" target="_blank">{node.title}</a></b>
+                                            <b><a href={node.url} target="_blank">{node.title}</a></b>
                                         </div>
                                         <a href={node.url} target="_blank" rel="noreferrer">
                                             {node.downloadedImages && (
