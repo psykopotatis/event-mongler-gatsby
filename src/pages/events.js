@@ -19,7 +19,7 @@ const EventsList = ({eventsData}) => {
                     <div className="col-md-9">
                         <ul className="list-group list-group-flush">
                             {eventsData?.edges?.map(({node}, index) => (
-                                <li className="list-group-item">
+                                <li className="list-group-item" key={index}>
                                     <div key={index}>
                                         <div>{node.formatted_start_date}</div>
                                         <div className="event-url">
