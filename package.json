@@ -1,8 +1,8 @@
 {
-  "name": "technofest",
+  "name": "klubbguiden",
   "version": "1.0.0",
   "private": true,
-  "description": "technofest",
+  "description": "klubbguiden",
   "author": "ingemar.finn",
   "keywords": [
     "gatsby"
