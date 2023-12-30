@@ -10,9 +10,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 
 
-const IndexPage = ({data}) => {
-    const location = "Stockholm";
+const location = "Stockholm";
 
+const IndexPage = ({data}) => {
     return (
         <div>
             <Header />
@@ -26,7 +26,7 @@ const IndexPage = ({data}) => {
 export default IndexPage
 
 export const Head = () => (
-  <Seo />
+  <Seo location={location} url="http://klubbguiden.se/stockholm"/>
 )
 
 export const query = graphql`

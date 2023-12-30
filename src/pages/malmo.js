@@ -8,10 +8,9 @@ import Seo from "../components/seo";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 
+const location = "Malmö";
 
 const IndexPage = ({data}) => {
-    const location = "Malmö";
-
     return (
         <div>
             <Header />
@@ -25,5 +24,5 @@ const IndexPage = ({data}) => {
 export default IndexPage
 
 export const Head = () => (
-  <Seo />
+  <Seo location={location} url="http://klubbguiden.se/malmo"/>
 )

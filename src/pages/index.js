@@ -9,10 +9,9 @@ import Seo from "../components/seo";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 
+const location = "Sverige";
 
 const IndexPage = ({data}) => {
-    const location = "Sverige";
-
     return (
         <div>
             <Header />
@@ -26,7 +25,10 @@ const IndexPage = ({data}) => {
 export default IndexPage
 
 export const Head = () => (
-  <Seo />
+  <Seo
+    location={location}
+    url="http://klubbguiden.se"
+  />
 )
 
 export const query = graphql`
