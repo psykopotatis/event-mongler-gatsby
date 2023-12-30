@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `technofest`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `klubbguiden.se`,
+    siteUrl: `http://klubbguiden.se`
   },
   plugins: ["gatsby-plugin-emotion", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',

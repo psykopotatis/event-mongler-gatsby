@@ -1,9 +1,10 @@
-import * as React from "react"
-import EventsList from './events.js'
+import * as React from "react";
+import EventsList from './events.js';
 import {graphql} from "gatsby";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Header from "../components/header";
+import SEO from "../components/seo";
 // Import from an installed package
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
@@ -21,6 +22,10 @@ const IndexPage = ({data}) => {
 }
 
 export default IndexPage
+
+export const Head = () => (
+  <SEO />
+)
 
 export const query = graphql`
   query {
