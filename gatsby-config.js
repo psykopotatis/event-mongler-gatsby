@@ -34,6 +34,13 @@ module.exports = {
         name: 'downloadedImages',
       },
     },
-
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-R2HL56VN3G" // Google Analytics / GA
+        ],
+      },
+    }
   ]
 };

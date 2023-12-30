@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const SEO = ({title, description, pathname, children}) => {
+const Seo = ({title, description, pathname, children}) => {
     return (
         <>
             <title>klubbguiden.se</title>
@@ -16,4 +16,4 @@ const SEO = ({title, description, pathname, children}) => {
     )
 }
 
-export default SEO;
+export default Seo;
