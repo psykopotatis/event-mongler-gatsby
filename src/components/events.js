@@ -2,13 +2,16 @@ import * as React from "react"
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 
-const EventsList = ({eventsData}) => {
+const EventsList = ({eventsData, location}) => {
+        // Get the number of events
+    const numberOfEvents = eventsData?.edges?.length || 0;
+
     return (
         <div>
             <div className="container">
                 <div className="row text-center">
                     <div className="col">
-                        <h2>Kommande evenemang i Stockholm</h2>
+                        <h2>{numberOfEvents} kommande evenemang i {location}</h2>
                     </div>
                 </div>
                 <div className="row">
