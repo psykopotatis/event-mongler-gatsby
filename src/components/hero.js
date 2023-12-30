@@ -1,9 +1,17 @@
 import * as React from "react"
 import './hero.css'
 
+// function to get random index
+function getRandomIndex(arrayLength) {
+    return Math.floor(Math.random() * arrayLength);
+}
+
 const Hero = ({location}) => {
+    var classArray = ['one', 'two', 'four', 'five'];
+    const randomClass = classArray[getRandomIndex(classArray.length)];
+
     return (
-        <div className="hero one" id="hero-container">
+        <div className={`hero ${randomClass}`} id="hero-container">
             <div className="hero-content darkness">
                 <h1 className="hero-title"><span className="red">klubb</span>guiden.se</h1>
                 <h2 className="hero-subtitle">

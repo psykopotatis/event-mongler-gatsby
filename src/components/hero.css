@@ -72,11 +72,6 @@
     background-position: center;
 }
 
-.hero.three {
-    background-image: url('images/hero_timewarp3-min.jpg');
-    background-position: top;
-}
-
 .hero.four {
     background-image: url('images/hero_ultra-min.jpg');
     background-position: top;

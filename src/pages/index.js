@@ -11,7 +11,7 @@ import "./main.css";
 
 
 const IndexPage = ({data}) => {
-    const location = "Stockholm";
+    const location = "Sverige";
 
     return (
         <div>
