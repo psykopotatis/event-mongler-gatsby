@@ -9,7 +9,7 @@ import Seo from "../components/seo";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 
-const location = "Sverige";
+const location = "Stockholm";
 
 const IndexPage = ({data}) => {
     return (
