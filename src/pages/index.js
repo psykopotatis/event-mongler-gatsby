@@ -15,7 +15,7 @@ const IndexPage = ({data}) => {
     return (
         <div>
             <Header />
-            <Hero location={location} />
+            <Hero location={location} image={"one"} />
             <EventsList eventsData={data.allEventsJson} location={location} />
             <Footer />
         </div>

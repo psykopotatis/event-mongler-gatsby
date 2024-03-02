@@ -2,6 +2,10 @@ import * as React from "react"
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 const aggregateEventsByMonth = (eventsData) => {
+    if (!eventsData || !Array.isArray(eventsData.edges)) {
+        return {}; // Return empty object if eventsData or edges is not in expected format
+    }
+    
     const eventsByMonth = {};
     // Array of month names for mapping
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
