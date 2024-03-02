@@ -37,6 +37,7 @@ export const query = graphql`
       edges {
         node {
           title
+          js_timestamp
           formatted_start_date
                   downloadedImages {
           childImageSharp {
