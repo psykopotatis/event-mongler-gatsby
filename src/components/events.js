@@ -1,5 +1,6 @@
 import * as React from "react"
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
+import './events.css'
 
 // Array of month names for mapping
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -11,7 +12,7 @@ const aggregateEventsByMonth = (eventsData) => {
 
     const eventsByMonth = {};
 
-    eventsData.edges.forEach(({ node }) => {
+    eventsData.edges.forEach(({node}) => {
         const date = new Date(node.js_timestamp);
         // Use month name from the array
         const monthYearKey = `${monthNames[date.getMonth()]} ${date.getFullYear()}`; // Format: MonthName-YYYY
@@ -38,56 +39,64 @@ const EventsList = ({eventsData, location}) => {
 
     return (
         <div>
-            <div className="container">
-                <div className="row text-center">
-                    <div className="col">
-                        <h2>{numberOfEvents} kommande evenemang i {location}</h2>
-                    </div>
+            <div className="row text-center">
+                <div className="col">
+                    <h2>{numberOfEvents} kommande evenemang i {location}</h2>
                 </div>
-                <div className="row">
-                    <div className="col-md-1">
-                        &nbsp;
-                    </div>
+            </div>
 
+            <div className="row">
+                {/* This div is for spacing and can remain unchanged, adjust if necessary */}
+                <div className="col-md-1 d-none d-md-block">
+                    &nbsp;
+                </div>
+
+                <div className="col-12 d-flex flex-column align-items-center col-md-9 mx-auto">
                     <div>
                         By month<br/>
                         {/* Create clickable links for each month */}
-                        {eventsCountByMonth.map(({ monthYear, count }) => (
+                        {eventsCountByMonth.map(({monthYear, count}) => (
                             <div key={monthYear}>
                                 <a href={`#${monthYear.replace(/\s+/g, '-')}`}>{monthYear}: {count} events</a>
                             </div>
                         ))}
                     </div>
-
-                    <div className="col-md-9">
-                        <ul className="list-group list-group-flush">
-                            {eventsData?.edges?.map(({node}, index) => {
-                                const date = new Date(node.js_timestamp);
-                                const monthYearKey = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
-                                const anchorId = monthYearKey.replace(/\s+/g, '-');
-
-                                return (
-                                    <li className="list-group-item" key={index}>
-                                        {/* Set anchor point for each month */}
-                                        <div id={anchorId} key={index}>
-                                            <div>{node.formatted_start_date}</div>
-                                            <div className="event-url">
-                                                <b><a href={node.url} target="_blank" rel="noreferrer">{node.title}</a></b>
-                                            </div>
-                                            <a href={node.url} target="_blank" rel="noreferrer">
-                                                {node.downloadedImages && (
-                                                    <GatsbyImage image={getImage(node.downloadedImages)} alt={node.title}/>
-                                                )}
-                                            </a>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-
                 </div>
             </div>
+
+            {eventsData?.edges?.map(({node}, index) => {
+                const date = new Date(node.js_timestamp);
+                const monthYearKey = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+                const anchorId = monthYearKey.replace(/\s+/g, '-');
+
+                return (
+                    <div className="row" key={index}>
+                        {/* This div is for spacing and can remain unchanged, adjust if necessary */}
+                        <div className="col-md-1 d-none d-md-block">
+                            &nbsp;
+                        </div>
+
+                        <div className="col-12 d-flex flex-column align-items-center col-md-9 mx-auto">
+
+                            <div className="eventItem">
+                                {/* Set anchor point for each month */}
+                                <div id={anchorId} key={index}>
+                                    <div>{node.formatted_start_date}</div>
+                                    <div className="event-url">
+                                        <b><a href={node.url} target="_blank" rel="noreferrer">{node.title}</a></b>
+                                    </div>
+                                    <a href={node.url} target="_blank" rel="noreferrer">
+                                        {node.downloadedImages && (
+                                            <GatsbyImage image={getImage(node.downloadedImages)} alt={node.title}/>
+                                        )}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+
+            })}
         </div>
     )
 }
