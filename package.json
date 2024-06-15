@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && surge public"
+    "deploy": "gatsby clean && gatsby build && surge public klubbguiden.se"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
