@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "klubbguiden",
-  "author": "ingemar.finn",
+  "author": "passerade.tomater",
   "keywords": [
     "gatsby"
   ],
@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby clean && gatsby build && surge public klubbguiden.se"
+    "deploy": "gatsby clean && gatsby build && surge public klubbguiden"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
